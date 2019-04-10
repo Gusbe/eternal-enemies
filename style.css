@@ -31,7 +31,7 @@ h2 {
 }
 
 h3 {
-  
+
 }
 
 p {
@@ -93,10 +93,8 @@ p {
 
 /* ---- section ---- */
 
-section.testimonials {
-  
-}
-
-section.testimonials .button {
-  margin-bottom: 10px;
+.game-container {
+  width: 100%;
+  height: 90vh; /* view port unit size. 90% of the window */
+  border: 1px solid black;
 }
