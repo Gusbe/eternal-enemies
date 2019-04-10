@@ -45,6 +45,7 @@ function main(){
 
     const game = new Game(canvasElement);
     game.startLoop();
+    game.setGameOverCallBack(buildGameOverScreen);
 
     document.addEventListener('keydown', function(event){
       

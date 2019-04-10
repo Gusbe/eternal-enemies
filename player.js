@@ -2,7 +2,7 @@
 
 function Player(canvas){
 
-  this.lives = 3;
+  this.lives = 10; 
   this.size = 50;
   this.canvas = canvas;
   this.x = 50;
@@ -35,6 +35,17 @@ Player.prototype.setDirection = function(newDirection){
 Player.prototype.setLives = function(){
 
   this.lives--;
+}
+
+
+Player.prototype.checkCollisionWithEnemy = function(enemy){
+
+  const collisionRight = this.x + this.size/2 > enemy.x - enemy.size/2;
+  const collisionLeft = this.x - this.size/2 < enemy.x + enemy.size/2;
+  const collisionTop = this.y - this.size/2 < enemy.y + enemy.size/2;
+  const collisionBottom = this.y + this.size/2 > enemy.y - enemy.size/2;
+
+  return collisionRight && collisionLeft && collisionTop && collisionBottom;
 }
 
 
