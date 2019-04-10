@@ -10,11 +10,15 @@ function Game(canvas){
 
 Game.prototype.startLoop = function(){
 
+  this.player = new Player(this.canvas);
+
   const loop = () => {  //arrow function to not loose his context
 
     this.clearCanvas();
     this.updateCanvas();
     this.drawCanvas();
+
+    console.log(this.player.direction);
 
     window.requestAnimationFrame(loop);
   }
@@ -30,10 +34,10 @@ Game.prototype.clearCanvas = function(){
 
 Game.prototype.updateCanvas = function(){
 
-
+  this.player.update();
 }
 
 Game.prototype.drawCanvas = function(){
 
-
+  this.player.draw();
 }
